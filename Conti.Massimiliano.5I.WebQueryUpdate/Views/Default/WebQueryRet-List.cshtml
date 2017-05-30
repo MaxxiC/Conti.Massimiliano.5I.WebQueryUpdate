@@ -1,0 +1,53 @@
+﻿@using System.Data
+@model List<List<string>>
+
+@using Model5I_Conti
+
+@{
+    ViewBag.Title = "WebQuery";
+}
+
+
+<div style="text-align: center;" class="container table-responsive">
+    <br />
+    <h1> @ViewBag.Title </h1>
+    <button type="button" onclick="location.href='@Url.Action("Index", "Default")'" class="btn btn-warning">
+        Index
+    </button>
+    <br />
+    <br />
+</div>
+
+
+<div style="text-align: center;" class="container table-responsive">
+
+    <button type="button" onclick="location.href='@Url.Action("WebQuery", "Default")'" class="btn">
+        Indietro
+    </button>
+    <br />
+    <br />
+
+
+    <table class="table table-bordered">
+        <tr>
+            @for (int i = 0; i < @Model[0].Count(); i++)
+            {
+                <th>Col @i.ToString()</th>
+            }
+            <th>.</th>
+        </tr>
+        @foreach (List<string> row in @Model)
+        {
+            <tr>
+                @for (int i = 0; i < @Model[i].Count; i++)
+                {
+                    <td>@row[i]</td>
+                }
+            </tr>
+        }
+
+    </table>
+    <button type="button" onclick="location.href='@Url.Action("WebQuery", "Default")'" class="btn">
+        Indietro
+    </button>
+</div>

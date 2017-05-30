@@ -1,0 +1,60 @@
+﻿@model Persona
+@using Model5I_Conti
+
+@{
+    ViewBag.Title = "XMLReadWrite2";
+}
+
+<div style="text-align: center;">
+    <br />
+    <h1> Aggiungi contatto </h1>
+    <button type="button" onclick="location.href='@Url.Action("Index", "Default")'" class="btn btn-warning">
+        Home
+    </button>
+    <br />
+    <br />
+</div>
+
+<div style="text-align: center;" class="container table-responsive">
+    @using (Html.BeginForm("RetContatto", "Default", FormMethod.Post))
+    {
+        <table align="center" class="table table-striped" style="width:50%">
+            <tr>
+                <th>Nome: </th>
+                <td>
+                    @Html.TextBoxFor(m => m.Nome_C, new { required = "required" })
+                </td>
+            </tr>
+            <tr>
+                <th>Cognome: </th>
+                <td>
+                    @Html.TextBoxFor(m => m.Cognome_C, new { required = "required" })
+                </td>
+            </tr>
+            <tr>
+                <th>Indirizzo: </th>
+                <td>
+                    @Html.TextBoxFor(m => m.Indirizzo_C, new { required = "required" })
+                </td>
+            </tr>
+            <tr>
+                <th>Numero di Cellulare: </th>
+                <td>
+                    @Html.TextBoxFor(m => m.Number_C, new { required = "required" })
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:red;color:white;" colspan="2">
+                    <button type="submit" name="ButtonAggiungi" class="btn btn-primary">AGGIUNGI</button>
+                </td>
+            </tr>
+                    
+        </table>
+
+    }
+    <br />
+    <button type="button" onclick="location.href='@Url.Action("XMLReadWrite2", "Default")'" class="btn">
+        Indietro
+    </button>
+
+</div>

@@ -1,0 +1,38 @@
+﻿@using Model5I_Conti
+
+@model List<Persona>
+@{
+    ViewBag.Title = "XMLReadWrite";
+}
+
+<div style="text-align: center;" class="container table-responsive">
+    <br />
+    <h1> @ViewBag.Title </h1>
+    <button type="button" onclick="location.href='@Url.Action("Index", "Default")'" class="btn btn-warning">
+        Index
+    </button>
+    <br />
+    <br />
+</div>
+
+<div class="table-responsive">
+    <table class="table table-hover">
+
+        <tr class="info">
+            <th>Nome</th>
+            <th>Cognome</th>
+            <th>Indirizzo</th>
+            <th>Cellulare</th>
+        </tr>
+
+        @foreach (Persona m in Model)
+        {
+            <tr>
+                <td>@m.Nome_C</td>
+                <td>@m.Cognome_C</td>
+                <td>@m.Number_C</td>
+                <td>@m.Indirizzo_C</td>
+            </tr>
+        }
+    </table>
+</div>

@@ -1,0 +1,36 @@
+﻿@using Model5I_Conti
+
+@model List<Persona>
+@{
+    ViewBag.Title = "PersoneXMLWeb";
+}
+
+<div style="text-align: center;" class="container table-responsive">
+    <br />
+    <h1> @ViewBag.Title </h1>
+    <button type="button" onclick="location.href='@Url.Action("Index", "Default")'" class="btn btn-warning">
+        Index
+    </button>
+    <br />
+    <br />
+</div>
+
+<table class="table">
+    <tr class="info">
+        <th>Nome</th>
+        <th>Cognome</th>
+        <th>Indirizzo</th>
+        <th>Cellulare</th>
+    </tr>
+
+    @foreach (Persona pers in @Model)
+    {
+        <tr>
+            <td>@pers.Nome_C</td>
+            <td>@pers.Cognome_C</td>
+            <td>@pers.Indirizzo_C</td>
+            <td>@pers.Number_C</td>
+        </tr>
+    }
+</table>
+

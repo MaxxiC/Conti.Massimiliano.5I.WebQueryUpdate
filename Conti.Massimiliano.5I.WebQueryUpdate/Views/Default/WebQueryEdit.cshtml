@@ -1,0 +1,90 @@
+﻿
+
+@{
+    ViewBag.Title = "WebQuery";
+}
+
+
+<div style="text-align: center;" class="container table-responsive">
+    <br />
+    <h1> @ViewBag.Title </h1>
+    <button type="button" onclick="location.href='@Url.Action("Index", "Default")'" class="btn btn-warning">
+        Index
+    </button>
+    <br />
+    <br />
+</div>
+
+@model List<string>
+
+<div style="text-align: center;" class="container table-responsive">
+
+    <button type="button" onclick="location.href='@Url.Action("WebQuery", "Default")'" class="btn">
+        Indietro
+    </button>
+    <br />
+    <br />
+
+
+
+
+
+    @using (Html.BeginForm("UpdateQuery", "Default", FormMethod.Post))
+    {
+        <table align="center" class="table table-striped" style="width:50%">
+            <tr>
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    <th>Col - @i.ToString()</th>
+                }
+            </tr>
+            <tr>
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    @*<td>@Model[i]</td>*@
+
+                    <td>
+                        @Html.TextBoxFor(m => m[i], new { required = "required" })
+                    </td>
+                }
+            </tr>
+            <tr>
+                <td style="background-color:red;color:white;" colspan="@Model.Count">
+                    <button type="submit" name="ButtonAggiungi" class="btn btn-primary">AGGIUNGI</button>
+                </td>
+            </tr>
+
+        </table>
+
+    }
+
+
+
+    <br />
+    <br />
+    <br />
+
+
+
+
+
+    <table class="table table-bordered">
+        <tr>
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                <th>Col @i.ToString()</th>
+            }
+        </tr>
+
+        <tr>
+            @foreach (string row in Model)
+            {
+                <td>@row</td>
+            }
+
+        </tr>
+    </table>
+    <button type="button" onclick="location.href='@Url.Action("WebQuery", "Default")'" class="btn">
+        Indietro
+    </button>
+</div>

@@ -1,0 +1,64 @@
+﻿@using System.Data
+@model MyOBJ
+
+@using Model5I_Conti
+
+@{
+    ViewBag.Title = "WebQuery";
+}
+
+
+<div style="text-align: center;" class="container table-responsive">
+    <br />
+    <h1> @ViewBag.Title </h1>
+    <button type="button" onclick="location.href='@Url.Action("Index", "Default")'" class="btn btn-warning">
+        Index
+    </button>
+    <br />
+    <br />
+</div>
+
+
+<div style="text-align: center;" class="container table-responsive">
+
+    <button type="button" onclick="location.href='@Url.Action("WebQuery", "Default")'" class="btn">
+        Indietro
+    </button>
+    <br />
+    <br />
+
+
+    <table class="table table-bordered">
+        <tr>
+            @for (int i = 0; i < @Model.dt.Columns.Count; i++)
+            {
+                <th>Col @i.ToString()</th>
+            }
+            <th>.</th>
+        </tr>
+        @foreach (DataRow row in @Model.dt.Rows)
+        {
+            <tr>
+
+                @if (true)
+                {
+                    Model.TheId = row[0].ToString();
+                }
+
+                @for (int i = 0; i < @Model.dt.Columns.Count; i++)
+                {
+                    <td>@row[i]</td>
+                }
+
+                <td style="background-color:crimson;" width="13">
+                    @Html.ActionLink("Edit", "WebQueryEdit", new { id = Model.TheId, nomeDB = Model.DataBase, query = Model.query })
+                </td>
+
+            </tr>
+        }
+
+    </table>
+    <button type="button" onclick="location.href='@Url.Action("WebQuery", "Default")'" class="btn">
+        Indietro
+    </button>
+</div>

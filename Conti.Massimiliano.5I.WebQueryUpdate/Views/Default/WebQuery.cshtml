@@ -1,0 +1,84 @@
+﻿@using Model5I_Conti
+
+@{
+    ViewBag.Title = "WebQuery";
+}
+
+@model string
+
+<div style="text-align: center;" class="container table-responsive">
+    <br />
+    <h1> @ViewBag.Title </h1>
+    <button type="button" onclick="location.href='@Url.Action("Index", "Default")'" class="btn btn-warning">
+        Index
+    </button>
+    <br />
+    <br />
+</div>
+
+<div style="text-align: center;" class="container table-responsive">
+
+    <table align="center" class="table table-striped" style="width:50%">
+        <tr>
+            @using (Html.BeginForm("WebQueryRet", "Default", FormMethod.Post))
+            {
+                <th width="13%">Query 1</th>
+                <td>
+                    @Html.TextBox("MyQuery", "SELECT * FROM Aziende", new { required = "required" })
+                </td>
+                <td width="24%" style="background-color: rgba(255, 0, 0, 0.4); color:white;" colspan="2">
+                    <button type="submit" name="ButtonAggiungi" class="btn btn-primary"> Esegui </button>
+                </td>
+            }
+        </tr>
+        <tr>
+            @using (Html.BeginForm("WebQueryRet", "Default", FormMethod.Post))
+            {
+                <th>Query 2</th>
+                <td>
+                    @Html.TextBox("MyQuery", "2", new { required = "required" })
+                </td>
+                <td style="background-color: rgba(255, 0, 0, 0.4); color:white;" colspan="2">
+                    <button type="submit" name="ButtonAggiungi" class="btn btn-primary"> Esegui </button>
+                </td>
+            }
+        </tr>
+        <tr>
+            @using (Html.BeginForm("WebQueryRet", "Default", FormMethod.Post))
+            {
+                <th>Query 3</th>
+                <td>
+                    @Html.TextBox("MyQuery", "3", new { required = "required" })
+                </td>
+                <td style="background-color: rgba(255, 0, 0, 0.4); color:white;" colspan="2">
+                    <button type="submit" name="ButtonAggiungi" class="btn btn-primary"> Esegui </button>
+                </td>
+            }
+        </tr>
+        <tr>
+            @using (Html.BeginForm("WebQueryRet", "Default", FormMethod.Post))
+            {
+                <th>Query 4</th>
+                <td>
+                    @Html.TextBox("MyQuery", "4", new { required = "required" })
+                </td>
+                <td style="background-color: rgba(255, 0, 0, 0.4); color:white;" colspan="2">
+                    <button type="submit" name="ButtonAggiungi" class="btn btn-primary"> Esegui </button>
+                </td>
+            }
+        </tr>
+        <tr>
+            @using (Html.BeginForm("WebQueryRet", "Default", FormMethod.Post))
+            {
+                <th>Query 5</th>
+                <td>
+                    @Html.TextBox("MyQuery", "5", new { required = "required" })
+                </td>
+                <td style="background-color: rgba(255, 0, 0, 0.4); color:white;" colspan="2">
+                    <button type="submit" name="ButtonAggiungi" class="btn btn-primary"> Esegui </button>
+                </td>
+            }
+        </tr>
+
+    </table>
+</div>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Rubrica>
+  <Persona Nome="Marco" Cognome="Avagnano" Indirizzo="via si 3" Numero="333 5557788" />
+  <Persona Nome="Simone" Cognome="Fontanella" Indirizzo="via ciaone 88" Numero="123 4448955" />
+  <Persona Nome="Manuel" Cognome="Fabbri" Indirizzo="via dei fighi 666" Numero="555 911-118" />
+  <Persona Nome="Simone" Cognome="Fontanella" Indirizzo="via ciaone 88" Numero="123 4448955" />
+  <Persona Nome="Nicholas" Cognome="Cecchini" Indirizzo="via dei defunti 13" Numero="987 3331177" />
+  <Persona Nome="Simone" Cognome="Fontanella" Indirizzo="via ciaone 88" Numero="123 4448955" />
+  <Persona Nome="Thomas" Cognome="zani" Indirizzo="via m. bruni" Numero="3318077598" />
+  <Persona Nome="Manuel" Cognome="Fabbrj" Indirizzo="Love SixSixSix 24" Numero="331 ciaone" />
+</Rubrica>

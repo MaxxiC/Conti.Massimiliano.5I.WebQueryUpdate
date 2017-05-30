@@ -1,0 +1,30 @@
+﻿@using Model5I_Conti
+
+@{
+    ViewBag.Title = "Home";
+}
+
+<div style="text-align: center;">
+
+    <h1>---</h1>
+    <br />
+    <div class="table-responsive">
+        <table class="table">
+            <tr>
+                <td>
+                    <button type="button" class="btn btn-info" onclick="location.href='@Url.Action("PersoneXMLWeb", "Default")'"> PersoneXLMWeb </button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-info" onclick="location.href='@Url.Action("XMLReadWrite", "Default")'"> XMLReadWrite </button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-info" onclick="location.href='@Url.Action("XMLReadWrite2", "Default")'"> XMLReadWrite2 </button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-info" onclick="location.href='@Url.Action("WebQuery", "Default")'"> WebQuery </button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+

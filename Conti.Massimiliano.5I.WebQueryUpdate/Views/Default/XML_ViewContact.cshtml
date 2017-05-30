@@ -1,0 +1,49 @@
+﻿@model Persona
+@using Model5I_Conti
+
+@{
+    ViewBag.Title = "XMLReadWrite2";
+}
+
+<div style="text-align: center;" class="container table-responsive">
+    <br />
+    <h1> Guarda Contatto </h1>
+    <button type="button" onclick="location.href='@Url.Action("Index", "Default")'" class="btn btn-warning">
+        Index
+    </button>
+    <br />
+    <br />
+</div>
+
+@if (Model == null)
+{
+    <span class="label label-danger">Contatto non trovato.</span>
+    <br />
+    <button type="button" onclick="location.href='@Url.Action("XMLReadWrite2", "Default")'" class="btn">
+        Indietro
+    </button>
+    return;
+}
+
+<table class="table table-striped" align="center" style="width:50%">
+    <tr>
+        <th>Nome</th>
+        <td>@Model.Nome_C</td>
+    </tr>
+    <tr>
+        <th>Cognome</th>
+        <td>@Model.Cognome_C</td>
+    </tr>
+    <tr>
+        <th>Indirizzo</th>
+        <td>@Model.Indirizzo_C</td>
+    </tr>
+    <tr>
+        <th>Numeri Cellulare</th>
+        <td>@Model.Number_C</td>
+    </tr>
+
+    <tr>
+        <td colspan="2" align="center"><button type="button" onclick="location.href='@Url.Action("XMLReadWrite2", "Default")'" class="btn">Indietro</button></td>
+    </tr>
+</table>
